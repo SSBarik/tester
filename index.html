@@ -283,25 +283,42 @@
 
             <hr class="mt-5 mb-5">
 
-            <p class="h4 mb-3">Payment Details</p>
+            <p class="h4 mb-4">Payment Details</p>
 
+
+            <!-- Card Details -->
+            <div class='card-wrapper mb-4' style="width: 2px"></div>
+            
+            <label for="cc">Card Number<span class="red-text">*</span></label><br>
+            <input type="text" name="number" class="form-control"><br>
             <!-- Name -->
-            <br><label>Name<span class="red-text">*</span></label>
-            <div class="form-row mb-4">
-              <div class="col-lg-6 mt-1">
-                  <!-- First name -->
-                  <input name="fName" type="text" class="form-control" placeholder="First name" required>
+            <div class="form-row">
+              <div class="col-6">
+                <!-- First name -->
+                <label for="cc">First Name<span class="red-text">*</span></label><br>
+                <input type="text" name="first-name" class="form-control"><br>
               </div>
-              <div class="col-lg-6 mt-1">
+              <div class="col-6">
                   <!-- Last name -->
-                  <input name="lName" type="text" class="form-control" placeholder="Last name" required>
+                  <label for="cc">Last Name<span class="red-text">*</span></label><br>
+                  <input type="text" name="last-name" class="form-control"><br>
               </div>
             </div>
-
-            <!-- Card Number -->
-            <label for="cc">Card Number<span class="red-text">*</span></label><br>
-            <input id="cc" type="tel" name="ccnumber2" placeholder="15 or 16 digits" class="form-control white  masked mb-4" pattern="[3-6][0-9 ]{15,18}" title="15 or 16-digit number" data-exception="cc">
-
+            
+            <div class="form-row">
+              <div class="col-6">
+                <!-- Expiry -->
+                <label for="cc">Expiry Date<span class="red-text">*</span></label><br>
+                <input type="text" name="expiry" class="form-control"><br> 
+              </div>
+              <div class="col-6">
+                <!-- cvc -->
+                <label for="cc">CVC<span class="red-text">*</span></label><br>
+                <input type="text" name="cvc" class="form-control">
+              </div>
+            </div>
+         
+         
             <!-- Country -->
             <br><label>Country<span class="red-text">*</span></label><br>
             <select id="country" name="country" class="browser-default custom-select mt-1 mb-4 col-lg-6" required="true">
@@ -604,7 +621,17 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="dist/card.js"></script>
+  <script>
+    var card = new Card({
+    form: 'form',
+    container: '.card-wrapper',
+
+    formSelectors: {
+        nameInput: 'input[name="first-name"], input[name="last-name"]'
+    }
+});
+  </script>
   <!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Bootstrap tooltips -->
