@@ -177,7 +177,7 @@
               <!-- Amount -->
               <div class="col-lg-4 mt-1 mb-4">
                 <label>Enter Amount<span class="red-text">*</span></label><br>
-                <input type="number" min="1" class="form-control" placeholder="0.0" required>
+                <input type="number" min="1" step="any"class="form-control" placeholder="0.0" required>
               </div>
             </div>
             
@@ -268,7 +268,7 @@
 
             <!-- Phone number -->
             <br><label>Phone Number<span class="red-text">*</span></label>
-            <input name="contact" type="number" class="form-control" placeholder="" aria-describedby="defaultsignupFormPhoneHelpBlock" required>
+            <input id="phone" type="tel" pattern="^\d{10}$" class="form-control" required >
             
             <!-- Leave a comment -->
             <br><label>Leave a comment</label>
