@@ -22,10 +22,7 @@ form {
 @media only screen and (min-width: 769px) {
   #intro {
     margin-top: 100px;
-  }
-  
-  #form {
-    margin-top: 50px;
+    position: fixed;
   }
 }
 
@@ -33,10 +30,10 @@ form {
   #intro {
     margin-top: 50px;
   }
+}
 
-  #form {
-    margin-top: 500px;
-  }
+#form {
+  margin-top: 50px;
 }
 
 
